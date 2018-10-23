@@ -1,0 +1,199 @@
+/*底部样式*/
+.action3{
+    color: grey;
+}
+  img{
+      height: 82px;
+      width: 82px;
+  }
+  .breadcrumb{
+      float: left;
+      background-color: white;
+  }
+  .breadcrumb  a:hover{
+      color: orangered;
+  }
+   .breadcrumb h5 a{
+       color: orangered;
+       font-weight: bold;
+   }
+  #div1{
+      float: left;
+      padding: 0;
+  }
+  #div2{
+      float: left;
+      padding: 0 5px;
+      margin: 10px 0 0 150px;
+  }
+  .div{
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      padding: 0;
+  }
+ .div a{
+      margin: 4px;
+      color: gray;
+  }
+  .div a:hover{
+       color: orangered;
+  }
+  .div span{
+     font-family: 微软雅黑;
+     font-size: 10px;
+     font-weight: bold;
+     color: black;
+  }
+  .div p{
+      color: gray;
+  }
+  /*第二块导航条样式*/
+.input-group{
+    padding-top: 10px;
+    padding-left: 50px; 
+}
+#div3 a{
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: black;
+}
+#div3 a:hover{
+      background-color:white!important; 
+      color: orangered;
+}
+.btn:hover{
+   background-color: mediumaquamarine;
+}
+#a1{
+    color: orangered!important;
+}
+/*轮播样式*/
+.carousel-inner img{
+    width: 1100px;
+    height: 380px;
+}
+/*时令食材样式*/
+.div5 img{
+    width: 150px;
+    height: 150px;
+}
+.div5>div{
+    margin: 0;
+}
+.div6{
+    width: 150px;
+    height: 50px;
+}
+.div6 a{
+    color: black;
+}
+.div6 a:hover{
+    color: orangered;
+    text-decoration: none;
+}
+.div6 p{
+    text-align: center;
+    font-size: 17px;
+}
+.div6>p{
+    color: grey!important;
+    font-family: 微软雅黑;
+    font-size: 10px;
+}
+.div4{
+     border-bottom:solid 1px lightgray;
+     padding-bottom: 5px;
+}
+.div4 a{
+    font-family: 微软雅黑;
+    font-size: 21px;
+    text-decoration: none;
+    color: orangered;
+}
+.action2{
+    border-bottom:solid 3px orangered;
+    padding-bottom: 5px;
+    color: orangered!important;
+}
+.action4{
+    border-bottom:solid 3px orangered;
+    padding-bottom: 5px;
+}
+.div4 span{
+    padding-left: 560px;
+}
+.div4 span a{
+     margin: auto 11px;
+     color: black;
+     font-size: 17px;
+}
+.div4 span a:hover{
+    color: orangered;
+}
+/*新秀菜谱样式*/
+.div4 #span1{
+    padding-left: 280px;
+}
+.div5>a{
+    margin-right: 20px;
+    color: gray;
+}
+.div7 img{
+    width: 240px;
+    height: 240px;   
+}
+
+.div7{
+    margin-top: 15px;
+}
+.div8{
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    /*与高度设置一样的值达到垂直居中*/
+}
+.div8 a{
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: black;
+}
+.div8 a:hover{
+    color: orangered;
+    text-decoration: none;
+}
+.n1{
+   transition:  transform 1s;
+}
+.n1:hover{
+    transform: scale(1.05,1.05);
+}
+/*健康食疗的样式*/
+.m4 img{
+    width: 330px;
+    height: 144px;
+}
+.div5{
+    clear: both;
+}
+.m5{
+    margin-top: 15px;
+}
+.m5 a{
+    font-family: 微软雅黑;
+    font-size: 17px;
+    color: gray;
+    line-height: 40px;
+}
+.m5 a:hover{
+    color: orangered;
+}
+/*切换图片的样式*/
+.content>div {
+	     	display: none;
+			width: 100%;
+		}
+ .content #d1 {
+			display: block;
+		}

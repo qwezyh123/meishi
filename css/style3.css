@@ -1,0 +1,154 @@
+/*底部样式*/
+ .div a{
+      margin: 4px;
+      color: gray;
+  }
+   .div p{
+      font-size: 10px;
+      color: gray;
+  }
+.action3{
+    color: grey;
+}
+  img{
+      height: 82px;
+      width: 82px;
+  }
+  .breadcrumb{
+      float: left;
+      background-color: white;
+  }
+  .breadcrumb  a:hover{
+      color: orangered;
+  }
+   .breadcrumb h5 a{
+       color: orangered;
+       font-weight: bold;
+   }
+  #div1{
+      float: left;
+      padding: 0;
+  }
+  #div2{
+      float: left;
+      padding: 0 5px;
+      margin: 10px 0 0 150px;
+  }
+  .div{
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      padding: 0;
+  }
+ .div a{
+      margin: 4px;
+      color: gray;
+  }
+  .div a:hover{
+       color: orangered;
+  }
+  .div span{
+     font-family: 微软雅黑;
+     font-size: 10px;
+     font-weight: bold;
+     color: black;
+  }
+  .div p{
+      color: gray;
+  }
+  /*第二块导航条样式*/
+.input-group{
+    padding-top: 10px;
+    padding-left: 50px; 
+}
+#div3 a{
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: black;
+}
+#div3 a:hover{
+      background-color:white!important; 
+      color: orangered;
+}
+.btn:hover{
+   background-color: mediumaquamarine;
+}
+#a1{
+    color: orangered!important;
+}
+/*轮播样式*/
+.carousel-inner img{
+    width: 1008px;
+    height: 288px;
+    margin-left:24px;
+}
+.btn:hover{
+      background-color:#ff5656!important;
+}
+/*菜单首页导航样式*/
+#navdiv1{
+     border-top:solid 1px orangered;
+     border-bottom:solid 1px orangered;
+     margin:12px;
+     width:99%;
+}
+#navdiv1 li a{
+    font-size:15px;
+}
+
+/*中间第一块内容的设置样式*/
+.center{
+  width: 1010px;
+  height: 200px;
+  /*background-color:red;*/
+  margin-left:20px;
+  position: relative;
+}
+
+.center .zhanshi{
+     width:198px;
+     height:198px;
+     margin-left: 4px;
+     border: solid 1px lightgray;
+     background-color:#fff5ee;
+}
+
+.center #div2{
+    width: 808px;
+    height:198px;
+    padding: 0;
+    margin-left:0px;
+    margin-top:0px;
+    background-color: #fffafa;
+
+}
+.center .zhanshi a{
+     color:gray;
+     text-align: center;
+     text-decoration: none;
+     font-family: 微软雅黑;
+     font-size:24px;
+}
+.center .zhanshi a:hover{
+      color: orangered;
+}
+/*设置表格的样式*/
+  table{
+      width:808px;
+      height:198px;
+      font-family: 微软雅黑;
+      font-size:20px;
+      color:black;
+      text-align: center;
+  }
+tr{
+    height: 55px;
+}
+td a{
+    line-height: 55px;
+    color: black;
+}
+td a:hover{
+    text-decoration: none;
+    color: orangered;
+}

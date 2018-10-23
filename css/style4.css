@@ -1,0 +1,225 @@
+/*底部样式*/
+.div a{
+      margin: 4px;
+      color: gray;
+  }
+   .div p{
+      font-size: 10px;
+      color: gray;
+  }
+.action3{
+    color: grey;
+}
+  img{
+      height: 82px;
+      width: 82px;
+  }
+  .breadcrumb{
+      float: left;
+      background-color: white;
+  }
+  .breadcrumb  a:hover{
+      color: orangered;
+  }
+   .breadcrumb h5 a{
+       color: orangered;
+       font-weight: bold;
+   }
+  #div1{
+      float: left;
+      padding: 0;
+  }
+  #div2{
+      float: left;
+      padding: 0 5px;
+      margin: 10px 0 0 150px;
+  }
+  .div{
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      padding: 0;
+  }
+ .div a{
+      margin: 4px;
+      color: gray;
+  }
+  .div a:hover{
+       color: orangered;
+  }
+  .div span{
+     font-family: 微软雅黑;
+     font-size: 10px;
+     font-weight: bold;
+     color: black;
+  }
+  .div p{
+      color: gray;
+  }
+  /*第二块导航条样式*/
+.input-group{
+    padding-top: 10px;
+    padding-left: 50px; 
+}
+#div3 a{
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: black;
+}
+#div3 a:hover{
+      background-color:white!important; 
+      color: orangered;
+}
+.btn:hover{
+   background-color: mediumaquamarine;
+}
+#a1{
+    color: orangered!important;
+}
+
+/*轮播样式*/
+.carousel-inner img{
+    width: 1100px;
+    height: 380px;
+}
+.thumbnail {
+      position: relative;
+    }
+ .thumbnail h4 {
+      background-color: rgba(0, 50,20,0); 
+      color:red;
+      height: 0;
+      position: absolute;
+      bottom: -6px;
+      right:0;
+      /* width: 100%; */
+      right:4px;
+      left: 4px;
+      overflow: hidden;
+      transition:1s;
+    }
+  .thumbnail:hover h4{
+      height: 40px;
+      line-height: 40px;
+    }
+/*切换图片导航的样式*/
+.div4{
+     border-bottom:solid 1px lightgray;
+     padding-bottom: 5px;
+}
+.div4 a{
+    font-family: 微软雅黑;
+    font-size: 21px;
+    text-decoration: none;
+    color: gray;
+}
+.div4>a:focus{
+     border-bottom:solid 3px orangered;
+     color: orangered; 
+     padding-bottom: 5px;
+}
+.action2 {
+     border-bottom:solid 3px orangered;
+     padding-bottom: 5px; 
+     color:orangered!important;
+}
+
+ .content>div {
+	     	display: none;
+			width: 100%;
+		}
+ .content #d1 {
+			display: block;
+		}
+
+/*最新推荐样式*/
+.div4 #span1{
+    padding-left: 280px;
+}
+.div5>a{
+    margin-right: 20px;
+}
+.div7 img{
+    width: 240px;
+    height: 240px;   
+}
+
+.div7{
+    margin-top: 10px;
+}
+.div8{
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+ /*与高度设置一样的值达到垂直居中*/
+}
+.div8 a{
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: black;
+}
+.div8 a:hover{
+    color: orangered;
+    text-decoration: none;
+}
+/*装饰属性设置*/
+#zhuangshidiv a{
+   float: left;
+   width: 99px;
+   display: block;
+  text-decoration: none;
+   text-align: center;
+   font-size: 14px;
+   margin-left: 4px;
+   color: gray;
+}
+
+#zhuangshidiv a:hover{
+    color:orangered;
+}
+
+#zhuangshidiv a img{
+   height: 60PX;
+   width: 60PX;
+   margin: 0 auto  5px;
+   border-radius: 50%;
+}
+/*折叠按钮样式*/
+#anniu{
+     background-color:white;
+     color:red;
+     font-size:18px;
+}
+#anniu:hover{
+       background-color:#ff5656;
+       color:white;
+}
+/*全部分类样式*/
+.fenlei a{
+      font-size:18px;
+      color:black;
+}
+.fenlei a:hover{
+     color:#ff5656;
+}
+/*搜索样式*/
+.btn:hover{
+      background-color:#ff5656!important;
+}
+/*菜单首页导航样式*/
+#navdiv1{
+     border-top:solid 1px orangered;
+     border-bottom:solid 1px orangered;
+     margin:12px;
+     width:99%;
+}
+#navdiv1 li a{
+    font-size:15px;
+}
+    .n1{
+   transition:  transform 1s;
+}
+.n1:hover{
+    transform: scale(1.05,1.05);
+}

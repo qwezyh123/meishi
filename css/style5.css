@@ -1,0 +1,45 @@
+.row img{
+    width: 320px;
+    height: 320px;
+ }
+.div1{
+    width: 320px;
+    height: 50px;
+    line-height: 50px;
+    /*与高度设置一样的值达到垂直居中*/
+}
+.div1 a{
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: black;
+}
+.div1 a:hover{
+    color: orangered;
+    text-decoration: none;
+}
+#div4 a{
+    color: gray;
+}
+.pagination a:hover{
+    color: orangered!important;
+    border: 1px solid orangered!important;
+}
+.active1{
+    background-color: orangered!important;
+    color: white!important;
+}
+.div5 img{
+    height: 82px;
+    width: 82px;
+}
+.breadcrumb li a{
+    color: gray;
+    font-size: 10px;
+}
+.n1{
+   transition:  transform 1s;
+}
+.n1:hover{
+    transform: scale(1.05,1.05);
+}

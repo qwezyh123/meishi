@@ -1,0 +1,4010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜谱</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+<!--控制淡入淡出的脚本-->
+<script>
+    $(document).ready(function(){
+        $(".breadcrumb li a").addClass("small action3");
+        $(".div5>a").click(function(e){
+            $(".action2").removeClass("action2");
+            $(this).addClass("action2");
+            e.preventDefault(); //阻止默认事件
+				//点击超链接，默认是打开链接到的图片或页面
+			$(".content>div").fadeOut(100); /*先让所有的div淡出*/
+			var divId=$(this).attr("href"); //这是this指的是当前点击的a元素
+			    //如果你点击的是第3个a，那么获取的href属性的值就是"#div3"
+			$(divId).fadeIn(300);
+        });
+         $("#navDiv li").click(function(){
+          $("#navDiv li").removeClass("active");
+          $(this).addClass("active");
+        });
+        $(".div7 img").addClass("n1");
+    });
+</script>
+<body>
+    <!--导航条固定在顶部-->
+    <!--第一个导航条-->
+
+    <div class="navbar  navbar-fixed-top  navbar-inverse">
+        <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navDiv">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+           <a class="navbar-brand" href="">
+                <img src="images/6.png" style="height: 35px;width: 35px;" alt="">
+            </a>
+        </div>
+        <div id="navDiv" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">首页</a></li>
+                <li><a href="caipu.html">菜谱</a></li>
+                <li><a href="shicai.html">食材</a></li>
+                <li><a href="#">珍选</a></li>
+                <li><a href="#">健康</a></li>
+                <li><a href="zhuanti.html">专题</a></li>
+                <li><a href="#">社区</a></li>
+                <li><a href="#">话题</a></li>
+                <li><a href="#">活动</a></li>
+                <li><a href="#">搜索</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right:0;">
+                <li><a href="zhuce.html">注册</a></li>
+                <li><a href="zhuce.html">登录</a></li>
+           </ul>
+        </div>
+    </div>
+    <div class="container" style="padding: 60px;">
+        <!--这里放logo和超链接-->
+        <div>
+            <!--第二个导航条-->
+           <!--<h1>这里放logo和超链接</h1>-->
+           <div class="navbar">
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle btn-default" data-toggle="collapse" data-target="#div3">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                   <a class="navbar-brand" href="">
+                     <img src="images/5.jpg"  style="height: 40px;width: 40px;" alt="">
+                    </a>
+               </div>
+               <div id="div3" class="collapse navbar-collapse">
+                   <ul class="nav navbar-nav">
+                       <li><a  id="a1" href="caipu.html" title="菜谱首页">菜谱首页</a></li>
+                       <li><a href="#" title="分类">分类</a></li>
+                       <li><a href="#" title="菜单">菜单</a></li>
+                       <li><a href="#" title="排行">排行</a></li>
+                       <li><a href="#" title="食材">食材</a></li>
+                       <li><a href="#" title="食疗食补">食疗食补</a></li>
+                   </ul>
+                   <div class="input-group">
+                       <input type="text" class="form-control">
+                       <span class="input-group-btn">
+                           <button class="btn">
+                              <span class="glyphicon glyphicon-search"></span>
+                              搜索
+                           </button>
+                       </span>
+                   </div>
+            <!--菜谱首页导航-->
+                <ul class="nav navbar-nav" id="navdiv1">
+                      <li><a id="a1" href="#" title="首页">首页</a></li>
+                      <li><a href="#" title="热菜">热菜</a></li>
+                      <li><a href="#" title="凉菜">凉菜</a></li>
+                      <li><a href="#" title="汤羹">汤羹</a></li>
+                      <li><a href="#" title="主食">主食</a></li>
+                      <li> <a href="#" title="小吃">小吃</a></li>
+                      <li> <a href="#" title="西餐">西餐</a></li>
+                      <li> <a href="#" title="烘培">烘培</a> </li>
+                      <li> <a href="#" title="饮品">饮品</a></li>
+                      <li> <a href="#" title="零食">零食</a></li>
+                      <li> <a href="#" title="泡酱腌菜">泡酱腌菜</a></li>
+                      <li> <a href="#" title="自制食材">自制食材</a></li>
+                      <li> <a href="#" title="最新菜谱">最新菜谱</a></li>
+                      <li class="fenlei"><a href="#"style="margin-left:17.8px;">浏览全部菜谱</a></li>
+                   </ul>
+               </div>
+           </div>
+        </div>
+  <!--这里面放轮播-->
+    <div class="carousel slide" id="mainCarousel">
+     <!--轮播内容-->
+       <div class="carousel-inner">
+         <div class="item active">
+           <div class="col-sm-4">
+             <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/9.jpg"></a>
+              <h4 class="text-center">面食的100种做法</h4>
+            </div>
+            </div>
+            <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/10.jpg"></a>
+               <h4 class="text-center">年糕的美味做法集合</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/11.jpg"></a>
+              <h4 class="text-center">百搭美味肉松</h4>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/12.jpg"></a>
+                <h4 class="text-center">美味盒子，你最爱那一款？</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images\Carousel/13.jpg"></a>
+                <h4 class="text-center">鸡、鸭、鱼肉的做法大全</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/14.jpg"></a>
+                <h4 class="text-center">快手小炒菜</h4>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/15.jpg"></a>
+                 <h4 class="text-center">清蒸辣炒两相宜</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/16.jpg"></a>
+                 <h4 class="text-center">牛蹄筋百变做法</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/17.jpg"></a>
+                 <h4 class="text-center">多彩料理园</h4>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/18.jpg"></a>
+                 <h4 class="text-center">水果的正确打开方式</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/19.jpg"></a>
+                 <h4 class="text-center">无豇豆，不夏天</h4>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <a href="#"><img src="images/Carousel/20.jpg"></a>
+                 <h4 class="text-center">送你一抹心旷神怡的蓝</h4>
+            </div>
+            </div>
+            </div>
+            </div>
+
+         <a class="carousel-control left" href="#mainCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#mainCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+         </a>
+        </div>
+        <br><br>
+     <!--这里面放装饰图片-->
+        <div class="container" id="zhuangshidiv">    
+             <a  title="一周最热" href="#" target="_blank">
+                 <img src="images/zhuangshi/r01.jpg" style="display: block;">
+                   一周最热 
+             </a>
+           
+             <a title="人气佳肴" href="#" target="_blank">
+                <img src="images/zhuangshi/r02.jpg" style="display: block;">
+                   人气佳肴
+             </a>
+     
+             <a  title="夏季食谱" href="#" target="_blank">
+                 <img src="images/zhuangshi/r03.jpg" style="display: block;">
+                      夏季食谱
+             </a>
+            
+             <a title="高颜值菜" href="#" target="_blank">
+                 <img src="images/zhuangshi/r04.jpg" style="display: block;">
+                      高颜值菜
+             </a>
+            
+             <a  title="快手菜肴" href="#" target="_blank">
+                  <img src="images/zhuangshi/r05.jpg" style="display: block;">
+                      快手菜肴
+             </a>
+           
+             <a title="营养早餐" href="#" target="_blank">
+                   <img src="images/zhuangshi/r06.jpg" style="display: block;">
+                      营养早餐
+              </a>
+           
+            <a  title="家常菜谱" href="#" target="_blank">
+                  <img src="images/zhuangshi/r07.jpg" style="display: block;">
+                      家常菜谱
+            </a>
+           
+            <a title="烘培大全"  href="#" target="_blank">
+                  <img src="images/zhuangshi/r08.jpg" style="display: block;">
+                      烘培大全
+            </a>
+           
+             <a  title="亲子专区" href="#" target="_blank">
+                  <img  src="images/zhuangshi/r09.jpg" style="display: block;">
+                      亲子专区
+             </a>
+           
+             <a title="所有菜谱" href="#" target="_blank">
+                  <img  src="images/zhuangshi/r10.jpg"style="display: block;">
+                       所有菜谱
+             </a>
+        </div>
+         <br><br><br><br>
+     <!--这里面放栅格化布局图片-->
+        <div class="div4 div5 ">
+            <!--放置超链接控制下面的div的切换-->
+              <a class="action2" href="#d1" id="ziti" title="最新推荐">最新推荐</a>
+              <a href="#d2" title="最新发布">最新发布</a>
+              <a href="#d3" title="热菜">热菜</a>
+              <a href="#d4" title="凉菜">凉菜</a>
+              <a href="#d5" title="汤羹">汤羹</a>
+              <a href="#d6" title="主食">主食</a>
+              <a href="#d7" title="小吃">小吃</a>
+              <a href="#d8" title="西餐">西餐</a>
+              <a href="#d9" title="烘培">烘培</a> 
+              <a href="#d10" title="自制食材">自制食材</a> 
+              <span class="fenlei"><a href="#"style="margin-left:170px;">全部分类</a></span>
+        </div>
+        <!--放置超链接控制切换的div-->
+        <div class="content" >
+           <!--<h1>放置超链接控制切换的div,div里面放置相应的图片</h1>-->
+
+           <!--最新推荐的图片-->
+           <div class="container" id="d1">
+           <div  class="row div7">
+           <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="白切牛肉">
+                           <img class="n1" src="images/zuixintuijian/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>白切牛肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海参江瑶焖冬瓜">
+                           <img src="images/zuixintuijian/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>海参江瑶焖冬瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁椒蒸带鱼">
+                           <img src="images/zuixintuijian/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁椒蒸带鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁椒土豆蒸鸡">
+                           <img src="images/zuixintuijian/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁椒土豆蒸鸡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蜂蜜黄瓜">
+                           <img src="images/zuixintuijian/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜂蜜黄瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红椒韭菜芽鸡蛋干">
+                           <img src="images/zuixintuijian/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红椒韭菜芽鸡蛋干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋肠粉">
+                           <img src="images/zuixintuijian/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋肠粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="少油版地三鲜">
+                           <img src="images/zuixintuijian/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>少油版地三鲜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="麻辣鸭胗">
+                           <img src="images/zuixintuijian/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>麻辣鸭胗</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="蜜豆餐包">
+                           <img src="images/zuixintuijian/10.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜜豆餐包</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="苏打夹心饼干">
+                           <img src="images/zuixintuijian/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>苏打夹心饼干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="酸菜煮虾潺">
+                           <img src="images/zuixintuijian/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>酸菜煮虾潺</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜蓉粉丝琵琶虾">
+                           <img src="images/zuixintuijian/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜蓉粉丝琵琶虾</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜苔小炒肉">
+                           <img src="images/zuixintuijian/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜苔小炒肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糖醋酥排骨">
+                           <img src="images/zuixintuijian/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糖醋酥排骨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="希腊复活节面包">
+                           <img src="images/zuixintuijian/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>希腊复活节面包</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+         <!--设置后四排折叠效果-->
+            <div  class="collapse zhedie">     
+         <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="广式蛋黄月饼">
+                           <img src="images/zuixintuijian/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>广式蛋黄月饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑胡椒香肠咸磅蛋糕">
+                           <img src="images/zuixintuijian/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑胡椒香肠咸磅蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="莲藕芋头排骨汤">
+                           <img src="images/zuixintuijian/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>莲藕芋头排骨汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="卤鸡爪">
+                           <img src="images/zuixintuijian/20.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>卤鸡爪</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="燕麦蛋挞">
+                           <img src="images/zuixintuijian/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>燕麦蛋挞</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="燕麦姜撞奶">
+                           <img src="images/zuixintuijian/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>燕麦姜撞奶</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="盐水花生">
+                           <img src="images/zuixintuijian/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>盐水花生</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝士海苔玉子烧">
+                           <img src="images/zuixintuijian/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝士海苔玉子烧</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香菇毛豆炒莆瓜">
+                           <img src="images/zuixintuijian/25.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香菇毛豆炒莆瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鱿鱼清粥">
+                           <img src="images/zuixintuijian/26.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鱿鱼清粥</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝麻薄脆饼">
+                           <img src="images/zuixintuijian/27.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝麻薄脆饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制酸奶">
+                           <img src="images/zuixintuijian/28.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制酸奶</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="老坛酸菜牛肉酱拌面">
+                           <img src="images/zuixintuijian/29.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>老坛酸菜牛肉酱拌面</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾皮韭菜鸡蛋盒子">
+                           <img src="images/zuixintuijian/30.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾皮韭菜鸡蛋盒子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾肉青菜炒面">
+                           <img src="images/zuixintuijian/31.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾肉青菜炒面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="皮蛋热拌鱼">
+                           <img src="images/zuixintuijian/32.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>皮蛋热拌鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+           </div>
+           </div>
+     <!--这里放置最新发布的图片-->
+           <div   id="d2" class="container">
+           <div class="row div7">
+               <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="香菇酱">
+                           <img src="images/zuixinfabu/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香菇酱</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海参江瑶焖冬瓜">
+                           <img src="images/zuixintuijian/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>海参江瑶焖冬瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁椒蒸带鱼">
+                           <img src="images/zuixintuijian/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁椒蒸带鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁椒土豆蒸鸡">
+                           <img src="images/zuixintuijian/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁椒土豆蒸鸡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="麻辣鸭脖配鸡肉丝">
+                           <img src="images/zuixinfabu/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>麻辣鸭脖配鸡肉丝</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红椒韭菜芽鸡蛋干">
+                           <img src="images/zuixintuijian/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红椒韭菜芽鸡蛋干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋肠粉">
+                           <img src="images/zuixintuijian/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋肠粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="少油版地三鲜">
+                           <img src="images/zuixintuijian/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>少油版地三鲜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="水果沙拉">
+                           <img src="images/zuixinfabu/2.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>水果沙拉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蜜豆餐包">
+                           <img src="images/zuixintuijian/10.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜜豆餐包</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="苏打夹心饼干">
+                           <img src="images/zuixintuijian/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>苏打夹心饼干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="意大利面">
+                           <img src="images/zuixinfabu/5.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>意大利面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜蓉粉丝琵琶虾">
+                           <img src="images/zuixintuijian/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜蓉粉丝琵琶虾</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜苔小炒肉">
+                           <img src="images/zuixintuijian/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜苔小炒肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糖醋酥排骨">
+                           <img src="images/zuixintuijian/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糖醋酥排骨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糯米莲藕">
+                           <img src="images/zuixinfabu/4.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糯米莲藕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+        <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片--> 
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="广式蛋黄月饼">
+                           <img src="images/zuixintuijian/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>广式蛋黄月饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑胡椒香肠咸磅蛋糕">
+                           <img src="images/zuixintuijian/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑胡椒香肠咸磅蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="莲藕芋头排骨汤">
+                           <img src="images/zuixintuijian/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>莲藕芋头排骨汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="盐焗手撕鸡">
+                           <img src="images/zuixinfabu/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>盐焗手撕鸡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="燕麦蛋挞">
+                           <img src="images/zuixintuijian/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>燕麦蛋挞</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="燕麦姜撞奶">
+                           <img src="images/zuixintuijian/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>燕麦姜撞奶</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="盐水花生">
+                           <img src="images/zuixintuijian/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>盐水花生</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝士海苔玉子烧">
+                           <img src="images/zuixintuijian/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝士海苔玉子烧</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香菇毛豆炒莆瓜">
+                           <img src="images/zuixintuijian/25.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香菇毛豆炒莆瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鱿鱼清粥">
+                           <img src="images/zuixintuijian/26.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鱿鱼清粥</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝麻薄脆饼">
+                           <img src="images/zuixintuijian/27.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝麻薄脆饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制酸奶">
+                           <img src="images/zuixintuijian/28.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制酸奶</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="爆炒花蛤">
+                           <img src="images/zuixinfabu/6.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>爆炒花蛤</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="烤红薯">
+                           <img src="images/zuixinfabu/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>烤红薯</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾肉青菜炒面">
+                           <img src="images/zuixintuijian/31.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾肉青菜炒面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="皮蛋热拌鱼">
+                           <img src="images/zuixintuijian/32.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>皮蛋热拌鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+              </div>
+           </div>
+     <!--这里放置热菜的图片-->
+         <div  id="d3" class="container">
+           <div  class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="白灼鲜虾">
+                           <img src="images/recai/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>白灼鲜虾</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="清炒冬瓜">
+                           <img src="images/recai/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>清炒冬瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜蓉扒油菜">
+                           <img src="images/recai/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蒜蓉扒油菜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鱿鱼丸子">
+                           <img src="images/recai/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鱿鱼丸子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蜂蜜黄瓜">
+                           <img src="images/zuixintuijian/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜂蜜黄瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红椒韭菜芽鸡蛋干">
+                           <img src="images/zuixintuijian/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红椒韭菜芽鸡蛋干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋肠粉">
+                           <img src="images/zuixintuijian/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋肠粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="少油版地三鲜">
+                           <img src="images/zuixintuijian/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>少油版地三鲜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="麻辣鸭胗">
+                           <img src="images/zuixintuijian/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>麻辣鸭胗</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香煎茄子">
+                           <img src="images/recai/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>香煎茄子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="宫保虾球">
+                           <img src="images/recai/6.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>宫保虾球</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="酸菜煮虾潺">
+                           <img src="images/zuixintuijian/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>酸菜煮虾潺</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜蓉粉丝琵琶虾">
+                           <img src="images/zuixintuijian/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜蓉粉丝琵琶虾</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜苔小炒肉">
+                           <img src="images/zuixintuijian/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜苔小炒肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糖醋酥排骨">
+                           <img src="images/zuixintuijian/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糖醋酥排骨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="家常猪皮炒洋葱">
+                           <img src="images/recai/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>家常猪皮炒洋葱</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+         <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红烧蹄筋">
+                           <img src="images/recai/8.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红烧蹄筋</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黄焖鸡">
+                           <img src="images/recai/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黄焖鸡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="可乐鸡翅">
+                           <img src="images/recai/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>可乐鸡翅</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="腊肉炒香干">
+                           <img src="images/recai/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>腊肉炒香干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="西兰花炒虾仁">
+                           <img src="images/recai/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>西兰花炒虾仁</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾炒年糕">
+                           <img src="images/recai/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾炒年糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="洋葱圈糖醋浇汁蛋">
+                           <img src="images/recai/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>洋葱圈糖醋浇汁蛋</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="油煎脆皮豆腐">
+                           <img src="images/recai/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>油煎脆皮豆腐</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="香菇酱">
+                           <img src="images/zuixinfabu/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香菇酱</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海参江瑶焖冬瓜">
+                           <img src="images/zuixintuijian/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>海参江瑶焖冬瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁椒蒸带鱼">
+                           <img src="images/zuixintuijian/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁椒蒸带鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁椒土豆蒸鸡">
+                           <img src="images/zuixintuijian/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁椒土豆蒸鸡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="番茄炒金针菇">
+                           <img src="images/recai/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>番茄炒金针菇</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="皮蛋热拌鱼">
+                           <img src="images/zuixintuijian/32.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>皮蛋热拌鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾肉青菜炒面">
+                           <img src="images/zuixintuijian/31.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾肉青菜炒面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="茄子鸡丁">
+                           <img src="images/recai/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>茄子鸡丁</p></a>
+                           </div>
+                       </a>
+                 </div>
+               </div>
+             </div>
+            </div>
+           </div>
+       <!--这里放置凉菜的图片-->
+        <div  id="d4" class="container">
+           <div  class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="黄瓜拌粉丝">
+                           <img src="images/liangcai/5.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黄瓜拌粉丝</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌包菜丝">
+                           <img src="images/liangcai/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>凉拌包菜丝</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="翡翠凉粉">
+                           <img src="images/liangcai/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>翡翠凉粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="冰粉">
+                           <img src="images/liangcai/8.jpg">
+                           <div class="div8">
+                               <a href="#"><p>冰粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蜂蜜黄瓜">
+                           <img src="images/zuixintuijian/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜂蜜黄瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌凤爪">
+                           <img src="images/liangcai/9.jpg">
+                           <div class="div8">
+                               <a href="#"><p>凉拌凤爪</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="马齿笕拌皮蛋">
+                           <img src="images/liangcai/10.jpg">
+                           <div class="div8">
+                               <a href="#"><p>马齿笕拌皮蛋</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌秋葵">
+                           <img src="images/liangcai/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>凉拌秋葵</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌虾">
+                           <img src="images/liangcai/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>凉拌虾</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌豇豆">
+                           <img src="images/liangcai/13.jpg">
+                           <div class="div8">
+                               <a href="#"><p>凉拌豇豆</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="皮蛋拌豆腐">
+                           <img src="images/liangcai/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>皮蛋拌豆腐</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉粉">
+                           <img src="images/liangcai/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>凉粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜蓉拌黄瓜">
+                           <img src="images/liangcai/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜蓉拌黄瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="菠菜墩">
+                           <img src="images/liangcai/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>菠菜墩</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌腐竹">
+                           <img src="images/liangcai/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>凉拌腐竹</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌金针菇">
+                           <img src="images/liangcai/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>凉拌金针菇</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+          <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="银耳川鸭">
+                           <img src="images/liangcai/20.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红烧蹄筋</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="盐水花生">
+                           <img src="images/liangcai/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>盐水花生</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蓝莓藕片">
+                           <img src="images/liangcai/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蓝莓藕片</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="白切牛肉">
+                           <img src="images/zuixintuijian/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>白切牛肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="酸辣凉拌豆角">
+                           <img src="images/liangcai/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>酸辣凉拌豆角</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="什锦泡菜">
+                           <img src="images/liangcai/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>什锦泡菜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蓑衣黄瓜">
+                           <img src="images/liangcai/25.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蓑衣黄瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="盐水牛肉">
+                           <img src="images/liangcai/26.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>盐水牛肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="麻酱蒜泥">
+                           <img src="images/liangcai/27.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>麻酱蒜泥</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜香毛豆">
+                           <img src="images/liangcai/28.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蒜香毛豆</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香辣拍黄瓜">
+                           <img src="images/liangcai/29.jpg">
+                           <div class="div8">
+                               <a href="#"><p>香辣拍黄瓜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制皮冻">
+                           <img src="images/liangcai/30.jpg">
+                           <div class="div8">
+                               <a href="#"><p>自制皮冻</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="菠菜拌桃仁">
+                           <img src="images/liangcai/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>菠菜拌桃仁</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌海带丝">
+                           <img src="images/liangcai/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>凉拌海带丝</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="凉拌紫菜">
+                           <img src="images/liangcai/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>凉拌紫菜</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="桃仁拌木耳">
+                           <img src="images/liangcai/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>桃仁拌木耳</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+             </div>
+            </div>
+           </div>
+     <!--这里是放置汤羹的图片-->
+          <div   id="d5" class="container">
+           <div class="row div7">
+               <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="白萝卜虾皮汤">
+                           <img src="images/tanggeng/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>白萝卜虾皮汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲢鱼头豆腐汤">
+                           <img src="images/tanggeng/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鲢鱼头豆腐汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="莲子银耳羹">
+                           <img src="images/tanggeng/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>莲子银耳羹</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红枣红豆花生汤">
+                           <img src="images/tanggeng/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红枣红豆花生汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="榨菜肉片青菜汤">
+                           <img src="images/tanggeng/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>榨菜肉片青菜汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="白萝卜蹄膀汤">
+                           <img src="images/tanggeng/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>白萝卜蹄膀汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="冬瓜鸭汤">
+                           <img src="images/tanggeng/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>冬瓜鸭汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="莲藕芋头排骨汤">
+                           <img src="images/zuixintuijian/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>莲藕芋头排骨汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="淮山枸杞螺头煲龙骨">
+                           <img src="images/tanggeng/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>淮山枸杞螺头煲龙骨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="猪蹄莲藕汤">
+                           <img src="images/tanggeng/9.jpg">
+                           <div class="div8">
+                               <a href="#"><p>猪蹄莲藕汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="番茄面片汤">
+                           <img src="images/tanggeng/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>番茄面片汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海参花胶煲鹌鹑汤">
+                           <img src="images/tanggeng/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>海参花胶煲鹌鹑汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡毛菜面疙瘩">
+                           <img src="images/tanggeng/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鸡毛菜面疙瘩</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="菌菇煲鸡汤">
+                           <img src="images/tanggeng/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>菌菇煲鸡汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="三色排骨汤">
+                           <img src="images/tanggeng/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>三色排骨汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="猪血豆腐羹">
+                           <img src="images/tanggeng/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>猪血豆腐羹</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+          <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie">       
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="日式沙拉汁蒸蛋羹">
+                           <img src="images/tanggeng/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>日式沙拉汁蒸蛋羹</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="番茄蛋花汤">
+                           <img src="images/tanggeng/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>番茄蛋花汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="猪肉丸子汤">
+                           <img src="images/tanggeng/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>猪肉丸子汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="桂圆桃胶蜜枣汤">
+                           <img src="images/tanggeng/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>桂圆桃胶蜜枣汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="老母鸡汤">
+                           <img src="images/tanggeng/20.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>老母鸡汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="白果莲子排骨汤">
+                           <img src="images/tanggeng/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>白果莲子排骨汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海参猪肉汤">
+                           <img src="images/tanggeng/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>海参猪肉汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="肉丸小白菜汤">
+                           <img src="images/tanggeng/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>肉丸小白菜汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="紫薯冰糖银耳羹">
+                           <img src="images/tanggeng/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>紫薯冰糖银耳羹</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="苦瓜黄豆排骨汤">
+                           <img src="images/tanggeng/25.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>苦瓜黄豆排骨汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鱼头丝瓜汤">
+                           <img src="images/tanggeng/26.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鱼头丝瓜汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蛋黄虾仁豆腐">
+                           <img src="images/tanggeng/27.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蛋黄虾仁豆腐</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="青椰文火炖海鸭">
+                           <img src="images/tanggeng/28.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>青椰文火炖海鸭</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="丝瓜鸡蛋汤">
+                           <img src="images/tanggeng/29.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>丝瓜鸡蛋汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="榴莲壳红豆汤">
+                           <img src="images/tanggeng/30.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>榴莲壳红豆汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="元宵枸杞银耳羹">
+                           <img src="images/tanggeng/31.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>元宵枸杞银耳羹</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+             </div>  
+              </div>
+           </div>
+      <!--这里是放主食的图片-->
+          <div   id="d6" class="container">
+           <div class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="螃蟹汤面">
+                           <img src="images/zhushi/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>螃蟹汤面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲜虾猪肉生煎包">
+                           <img src="images/zhushi/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鲜虾猪肉生煎包</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="包菜粉丝蒸饺子">
+                           <img src="images/zhushi/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>包菜粉丝蒸饺子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="全麦红枣发糕 ">
+                           <img src="images/zhushi/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>全麦红枣发糕 </p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="卤肉饭">
+                           <img src="images/zhushi/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>卤肉饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红椒韭菜芽鸡蛋干">
+                           <img src="images/zuixintuijian/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>红椒韭菜芽鸡蛋干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋肠粉">
+                           <img src="images/zuixintuijian/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋肠粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蛋香馒头丁">
+                           <img src="images/zhushi/6.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蛋香馒头丁</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="甘蓝三明治">
+                           <img src="images/zhushi/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>甘蓝三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="黄金蛋炒饭">
+                           <img src="images/zhushi/8.jpg">
+                           <div class="div8">
+                               <a href="#"><p>黄金蛋炒饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋杂蔬三明治">
+                           <img src="images/zhushi/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋杂蔬三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="土豆丝煎饼">
+                           <img src="images/zhushi/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>土豆丝煎饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲜肉虾仁小混沌">
+                           <img src="images/zhushi/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鲜肉虾仁小混沌</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蒜苔小炒肉">
+                           <img src="images/zuixintuijian/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蒜苔小炒肉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糖醋酥排骨">
+                           <img src="images/zuixintuijian/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糖醋酥排骨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="咖喱土豆鸡饭">
+                           <img src="images/zhushi/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>咖喱土豆鸡饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+         <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="茴香饼">
+                           <img src="images/zhushi/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>茴香饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="韭菜盒子">
+                           <img src="images/zhushi/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>韭菜盒子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="翡翠剪刀面">
+                           <img src="images/zhushi/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>翡翠剪刀面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="牛肉洋葱咖喱饭">
+                           <img src="images/zhushi/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>牛肉洋葱咖喱饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲜虾火腿方便面">
+                           <img src="images/zhushi/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鲜虾火腿方便面</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="炒油条">
+                           <img src="images/zhushi/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>炒油条</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="贝壳卷">
+                           <img src="images/zhushi/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>贝壳卷</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="喇瓜水饺">
+                           <img src="images/zhushi/20.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>喇瓜水饺</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="五香花卷">
+                           <img src="images/zhushi/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>五香花卷</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="长豆洋葱牛肉包子">
+                           <img src="images/zhushi/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>长豆洋葱牛肉包子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑芝麻酒酿饼">
+                           <img src="images/zhushi/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑芝麻酒酿饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="酸青瓜羊肉水饺">
+                           <img src="images/zhushi/24.jpg">
+                           <div class="div8">
+                               <a href="#"><p>酸青瓜羊肉水饺</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="豌豆炒面">
+                           <img src="images/zhushi/25.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>豌豆炒面</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾皮韭菜鸡蛋盒子">
+                           <img src="images/zuixintuijian/30.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾皮韭菜鸡蛋盒子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾肉青菜炒面">
+                           <img src="images/zuixintuijian/31.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾肉青菜炒面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="皮蛋热拌鱼">
+                           <img src="images/zuixintuijian/32.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>皮蛋热拌鱼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+           </div>
+          </div>
+     <!--这里是放小吃的图片-->
+        <div   id="d7" class="container">
+           <div class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="香肠炬土豆泥">
+                           <img src="images/xiaochi/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香肠炬土豆泥</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="缤纷水果挞">
+                           <img src="images/xiaochi/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>缤纷水果挞</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="健康美味烤薯片">
+                           <img src="images/xiaochi/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>健康美味烤薯片</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="大良炸牛奶 ">
+                           <img src="images/xiaochi/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>大良炸牛奶 </p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="米布丁">
+                           <img src="images/xiaochi/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>米布丁</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="南瓜饼">
+                           <img src="images/xiaochi/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>南瓜饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="宝宝版鲜嫩虾丸">
+                           <img src="images/xiaochi/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>宝宝版鲜嫩虾丸</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="豆沙蜜豆月饼">
+                           <img src="images/xiaochi/6.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>豆沙蜜豆月饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="甘蓝三明治">
+                           <img src="images/zhushi/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>甘蓝三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="蛋香馒头丁">
+                           <img src="images/zhushi/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蛋香馒头丁</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋杂蔬三明治">
+                           <img src="images/zhushi/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋杂蔬三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="土豆丝煎饼">
+                           <img src="images/zhushi/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>土豆丝煎饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲜肉虾仁小混沌">
+                           <img src="images/zhushi/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鲜肉虾仁小混沌</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="豆沙稠鱼烧">
+                           <img src="images/xiaochi/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>豆沙稠鱼烧</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红薯糯米饼">
+                           <img src="images/xiaochi/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>红薯糯米饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="发面豆沙饼">
+                           <img src="images/xiaochi/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>发面豆沙饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+           <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蛋黄豆沙月饼">
+                           <img src="images/xiaochi/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>蛋黄豆沙月饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="韭菜盒子">
+                           <img src="images/zhushi/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>韭菜盒子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="番茄酱土豆球">
+                           <img src="images/xiaochi/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>番茄酱土豆球</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="牛肉洋葱咖喱饭">
+                           <img src="images/zhushi/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>牛肉洋葱咖喱饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="挂糊花生米">
+                           <img src="images/xiaochi/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>挂糊花生米</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="炒油条">
+                           <img src="images/zhushi/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>炒油条</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="贝壳卷">
+                           <img src="images/zhushi/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>贝壳卷</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="喇瓜水饺">
+                           <img src="images/zhushi/20.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>喇瓜水饺</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="五香花卷">
+                           <img src="images/zhushi/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>五香花卷</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="长豆洋葱牛肉包子">
+                           <img src="images/zhushi/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>长豆洋葱牛肉包子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑芝麻酒酿饼">
+                           <img src="images/zhushi/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑芝麻酒酿饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="酸青瓜羊肉水饺">
+                           <img src="images/zhushi/24.jpg">
+                           <div class="div8">
+                               <a href="#"><p>酸青瓜羊肉水饺</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="盐水花生">
+                           <img src="images/zuixintuijian/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>盐水花生</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="虾皮韭菜鸡蛋盒子">
+                           <img src="images/zuixintuijian/30.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>虾皮韭菜鸡蛋盒子</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝士海苔玉子烧">
+                           <img src="images/zuixintuijian/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝士海苔玉子烧</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝心肉丸">
+                           <img src="images/xiaochi/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝心肉丸</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+           </div>
+          </div>
+  <!--这里是放西餐的图片-->
+     <div   id="d8" class="container">
+      <div class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="咖喱鸡丁披萨">
+                           <img src="images/xican/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>咖喱鸡丁披萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="棒棒糖三明治">
+                           <img src="images/xican/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>棒棒糖三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="健康美味烤薯片">
+                           <img src="images/xiaochi/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>健康美味烤薯片</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="大良炸牛奶 ">
+                           <img src="images/xiaochi/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>大良炸牛奶 </p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="米布丁">
+                           <img src="images/xiaochi/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>米布丁</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="菠菜三文鱼三明治">
+                           <img src="images/xican/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>菠菜三文鱼三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="草莓奶昔">
+                           <img src="images/xican/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>草莓奶昔</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="烤肉茄子三明治">
+                           <img src="images/xican/5.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>烤肉茄子三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="甘蓝三明治">
+                           <img src="images/zhushi/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>甘蓝三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="明太子意大利面面">
+                           <img src="images/xican/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>明太子意大利面面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋杂蔬三明治">
+                           <img src="images/zhushi/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋杂蔬三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="尼斯轻食三明治">
+                           <img src="images/xican/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>尼斯轻食三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="泡菜培根意面">
+                           <img src="images/xican/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>泡菜培根意面</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="培根鸡蛋三明治">
+                           <img src="images/xican/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>培根鸡蛋三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="千层芒果慕斯蛋糕">
+                           <img src="images/xican/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>千层芒果慕斯蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="茄汁意面">
+                           <img src="images/xican/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>茄汁意面</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+        <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="肉酱意大利面">
+                           <img src="images/xican/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>肉酱意大利面</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="法式黑椒烤仔排">
+                           <img src="images/xican/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>法式黑椒烤仔排</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="番茄酱土豆球">
+                           <img src="images/xiaochi/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>番茄酱土豆球</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="牛肉洋葱咖喱饭">
+                           <img src="images/zhushi/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>牛肉洋葱咖喱饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="挂糊花生米">
+                           <img src="images/xiaochi/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>挂糊花生米</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="炒油条">
+                           <img src="images/zhushi/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>炒油条</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="贝壳卷">
+                           <img src="images/zhushi/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>贝壳卷</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="南瓜浓汤">
+                           <img src="images/xican/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>南瓜浓汤</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海鲜焗饭">
+                           <img src="images/xican/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>海鲜焗饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑胡椒牛肉皮萨">
+                           <img src="images/xican/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑胡椒牛肉皮萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑芝麻酒酿饼">
+                           <img src="images/zhushi/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑芝麻酒酿饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黄金干虾什锦披萨">
+                           <img src="images/xican/17.jpg">
+                           <div class="div8">
+                               <a href="#"><p>黄金干虾什锦披萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲜虾牛油果三明治">
+                           <img src="images/xican/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鲜虾牛油果三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香芒鸡肉汉堡">
+                           <img src="images/xican/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香芒鸡肉汉堡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝士海苔玉子烧">
+                           <img src="images/zuixintuijian/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝士海苔玉子烧</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝心肉丸">
+                           <img src="images/xiaochi/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝心肉丸</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+           </div>
+          </div>
+    <!--这里是放烘培的图片-->
+          <div   id="d9" class="container">
+      <div class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="咖喱鸡丁披萨">
+                           <img src="images/xican/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>咖喱鸡丁披萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="棒棒糖三明治">
+                           <img src="images/xican/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>棒棒糖三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="健康美味烤薯片">
+                           <img src="images/xiaochi/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>健康美味烤薯片</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="宝宝狼牙棒">
+                           <img src="images/xinxioucaipu/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>宝宝狼牙棒</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="三明治">
+                           <img src="images/xinxioucaipu/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="菠菜三文鱼三明治">
+                           <img src="images/xican/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>菠菜三文鱼三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蜂蜜纸杯蛋糕">
+                           <img src="images/hongpei/1.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜂蜜纸杯蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="烤肉茄子三明治">
+                           <img src="images/xican/5.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>烤肉茄子三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="甘蓝三明治">
+                           <img src="images/zhushi/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>甘蓝三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="蜂芝士小面包">
+                           <img src="images/hongpei/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜂芝士小面包</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鸡蛋杂蔬三明治">
+                           <img src="images/zhushi/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鸡蛋杂蔬三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="尼斯轻食三明治">
+                           <img src="images/xican/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>尼斯轻食三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="咸香土豆泥曲奇">
+                           <img src="images/hongpei/4.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>咸香土豆泥曲奇</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="培根鸡蛋三明治">
+                           <img src="images/xican/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>培根鸡蛋三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="千层芒果慕斯蛋糕">
+                           <img src="images/xican/10.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>千层芒果慕斯蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="酸奶小蛋糕">
+                           <img src="images/hongpei/3.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>酸奶小蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+         <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="巧克力豆麻薯面包">
+                           <img src="images/hongpei/5.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>巧克力豆麻薯面包</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="法式黑椒烤仔排">
+                           <img src="images/xican/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>法式黑椒烤仔排</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="土司披萨">
+                           <img src="images/hongpei/6.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>土司披萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香肠酥">
+                           <img src="images/hongpei/7.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香肠酥</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="挂糊花生米">
+                           <img src="images/xiaochi/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>挂糊花生米</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="炒油条">
+                           <img src="images/zhushi/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>炒油条</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="贝壳卷">
+                           <img src="images/zhushi/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>贝壳卷</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="小熊分蛋海绵蛋糕">
+                           <img src="images/hongpei/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>小熊分蛋海绵蛋糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="海鲜焗饭">
+                           <img src="images/xican/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>海鲜焗饭</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑胡椒牛肉皮萨">
+                           <img src="images/xican/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑胡椒牛肉皮萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑芝麻酒酿饼">
+                           <img src="images/zhushi/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黑芝麻酒酿饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黄金干虾什锦披萨">
+                           <img src="images/xican/17.jpg">
+                           <div class="div8">
+                               <a href="#"><p>黄金干虾什锦披萨</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="鲜虾牛油果三明治">
+                           <img src="images/xican/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>鲜虾牛油果三明治</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="香芒鸡肉汉堡">
+                           <img src="images/xican/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>香芒鸡肉汉堡</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝士海苔玉子烧">
+                           <img src="images/zuixintuijian/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝士海苔玉子烧</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="芝心肉丸">
+                           <img src="images/xiaochi/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝心肉丸</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+           </div>
+          </div>
+   <!--这里放自制食材-->
+            <div   id="d10" class="container">
+           <div class="row div7">
+             <!--第一排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                        <a href="#" title="熬猪油">
+                           <img src="images/zizhishicai/1.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>熬猪油</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="剁辣椒">
+                           <img src="images/zizhishicai/2.jpg">
+                           <div class="div8">
+                               <a href="#"><p>剁辣椒</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="粉红胡椒蜜柚果酱">
+                           <img src="images/zizhishicai/3.jpg">
+                           <div class="div8">
+                               <a href="#"><p>粉红胡椒蜜柚果酱</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="蜂蜜西柚酱 ">
+                           <img src="images/zizhishicai/4.jpg">
+                           <div class="div8">
+                               <a href="#"><p>蜂蜜西柚酱 </p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+        <!--第二排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="玫瑰绿豆馅">
+                           <img src="images/zizhishicai/5.jpg">
+                           <div class="div8">
+                               <a href="#"><p>玫瑰绿豆馅</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="玫瑰苹果果酱">
+                           <img src="images/zizhishicai/6.jpg">
+                           <div class="div8">
+                               <a href="#"><p>玫瑰苹果果酱</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黑椒猪肉脯">
+                           <img src="images/zizhishicai/7.jpg">
+                           <div class="div8">
+                               <a href="#"><p>黑椒猪肉脯</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="棉花糖布朗尼">
+                           <img src="images/zizhishicai/8.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>棉花糖布朗尼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+            <!--第三排的图片-->
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="芝麻猪肉松">
+                           <img src="images/zizhishicai/9.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>芝麻猪肉松</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 ">
+                   <div>
+                       <a href="#" title="转化糖浆">
+                           <img src="images/zizhishicai/10.jpg">
+                           <div class="div8">
+                               <a href="#"><p>转化糖浆</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糖桂花">
+                           <img src="images/zizhishicai/11.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糖桂花</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制红油">
+                           <img src="images/zizhishicai/12.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制红油</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第四排的图片-->
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="红豆枸杞阿胶糕">
+                           <img src="images/zizhishicai/13.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>红豆枸杞阿胶糕</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="黄金土豆饼">
+                           <img src="images/zizhishicai/14.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>黄金土豆饼</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="椒浇芒果">
+                           <img src="images/zizhishicai/15.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>椒浇芒果</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="李子果泥">
+                           <img src="images/zizhishicai/16.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>李子果泥</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+         <!--设置后四排的折叠效果-->
+            <div  class="collapse zhedie"> 
+        <!--第五排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="五仁馅">
+                           <img src="images/zizhishicai/17.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>五仁馅</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="台湾香肠">
+                           <img src="images/zizhishicai/18.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>台湾香肠</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="乳酪绿豆蓉馅">
+                           <img src="images/zizhishicai/19.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>乳酪绿豆蓉馅</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="猪板油">
+                           <img src="images/zizhishicai/20.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>猪板油</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+         <!--第六排的图片-->
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="薰衣草火龙果果酱">
+                           <img src="images/zizhishicai/21.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>薰衣草火龙果果酱</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制黑豆豆腐">
+                           <img src="images/zizhishicai/22.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制黑豆豆腐</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制凉粉">
+                           <img src="images/zizhishicai/23.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制凉粉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制糖桂花">
+                           <img src="images/zizhishicai/24.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制糖桂花</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+            <!--第七排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="龙眼酱">
+                           <img src="images/zizhishicai/25.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>龙眼酱</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制莲蓉">
+                           <img src="images/zizhishicai/26.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制莲蓉</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制柠檬蜂蜜茶">
+                           <img src="images/zizhishicai/27.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制柠檬蜂蜜茶</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制虾油">
+                           <img src="images/zizhishicai/28.jpg">
+                           <div class="div8">
+                               <a href="#"><p>自制虾油</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                <!--第八排的图片-->
+             <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="糖水山楂">
+                           <img src="images/zizhishicai/29.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>糖水山楂</p></a>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="苦瓜茶">
+                           <img src="images/zizhishicai/30.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>苦瓜茶</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制芝麻碎">
+                           <img src="images/zizhishicai/31.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制芝麻碎</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <div>
+                       <a href="#" title="自制杨梅干">
+                           <img src="images/zizhishicai/32.jpg" >
+                           <div class="div8">
+                               <a href="#"><p>自制杨梅干</p></a>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+              </div>
+         </div>
+      </div>
+      </div>
+      <br>
+     <button id="anniu"class="btn" data-toggle="collapse" style="width:100%;height:50px;"
+        data-target=".zhedie">查看更多</button>
+       <br>
+       <br>
+        
+       
+        <hr>
+        <!--网页的底部-->
+        <div class="row">
+            <!--底部超链接-->
+            <div id="div1" class="col-xs-8">
+                <ul id="p1" class="breadcrumb">
+                    <h5><a>美食美客 - 让吃更美好!</a></h5>
+                    <li><a class="action3" href="#">关于我们</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">服务声明</a></li>
+                    <li><a href="#">友情链接</a></li>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">移动应用</a></li> 
+                </ul>
+            </div>
+     <!--这里放置图片让图片进行浮动-->
+             <div class="col-xs-4 hidden-md hidden-sm hidden-xs">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div>
+                        </div>
+                    </div>
+                     <div class="col-xs-3">
+                        <div>
+                            <a href="#" title="手机客户端">
+                             <img src="images/msc_app.png" alt="">
+                           </a> 
+                        </div>
+                    </div>
+                     <div class="col-xs-3">
+                        <div>
+                            <a href="#" title="微信客户端">
+                             <img src="images/weixin_727.png" alt="">
+                           </a> 
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--友情链接-->
+        <div class="div">
+           <p >
+               <span>友情链接:</span>
+               <a href="">爱奇艺生活</a>
+               <a href="">应用汇</a>
+               <a href="">中华美食网</a>
+               <a href="">太平洋亲子网</a>
+               <a href="">美食杰</a>
+               <a href="">POCO美食网</a>
+               <a href="">红餐网</a>
+               <a href="">食品商务网</a>
+               <a href="">妈妈网</a>
+               <a href="">亲宝网</a>
+               <a href="">6296网址大全</a>
+               <a href="">中国地图</a>
+               <a href="">三九养生堂</a>
+               <a href="">饭菜网</a>
+               <a href="">波奇网</a>
+               <a href="">糖豆网</a>
+           </p>
+        </div>
+        <!--放置版权信息-->
+        <div class="div">
+            <p>
+                版权所有&copy2017-2018
+               <a href="">美食美客</a>
+               保留所有权-欢欢and梅梅-联系地址:贵州师范大学/大数据与计算机科学学院-联系电话:18285254824 or 15902698653
+            </p>
+        </div>
+    </div>
+</body>
+</html>
